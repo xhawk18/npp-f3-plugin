@@ -1,0 +1,1 @@
+{"CSSLint":{"adjoining-classes":1,"vendor-prefix":1},"XML":{"xpath":"//function[@name='Invoke']"}}
