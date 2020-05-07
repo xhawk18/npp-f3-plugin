@@ -13,6 +13,18 @@
             end: Math.max(cacheAnchor, cachePos)
         };
     }
+	
+	(function(thiz) {
+		var createCmdFn = function (cmdName, id){
+			thiz["_"+cmdName] = id;
+			thiz[cmdName] = function(plus){
+				return Editor.runMenuCmd(id + (plus?plus:0));
+			}
+		};
+		
+		createCmdFn("SEARCH_SELECT_AND_FIND_NEXT", (thiz._SEARCH + 48));
+		createCmdFn("SEARCH_SELECT_AND_FIND_PREVIOUS", (thiz._SEARCH + 49));
+	})(MenuCmds);
 
     function UE_Find(){
         if(Editor.currentView){
